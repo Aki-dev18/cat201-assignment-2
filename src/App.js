@@ -19,7 +19,13 @@ function App() {
         <p>To be the number one tech company in the world.</p>
       </section>
 
-      {/* SECTION 3: The Team */}
+      {/* SECTION 3: Our Service */}
+      <section style={{ padding: '20px' }}>
+        <h2>Our services</h2>
+        <p>kondensasi</p>
+      </section>
+
+      {/* SECTION 4: The Team */}
       <section style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
         <h2>Meet Our Team</h2>
         <p>Team member photos will go here!</p>
