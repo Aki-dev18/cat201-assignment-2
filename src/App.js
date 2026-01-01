@@ -1,36 +1,107 @@
+import React from 'react';
 import './App.css';
 
+// --- 1. INTRO COMPONENT (Renamed from Hero) ---
+function Intro() {
+  return (
+    <section style={{ padding: '80px', textAlign: 'center', backgroundColor: '#282c34', color: 'white' }}>
+      <h1 style={{ fontSize: '3rem', margin: '0' }}>PixelPerfect Designs</h1>
+      <h3 style={{ fontWeight: '300' }}>We Build Digital Experiences</h3>
+      <p style={{ marginTop: '20px' }}>Welcome to the future of web design. We help businesses grow.</p>
+      <button style={{ marginTop: '20px', padding: '10px 25px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#61dafb', border: 'none', borderRadius: '5px' }}>
+        Contact Us
+      </button>
+    </section>
+  );
+}
+
+// --- 2. MISSION COMPONENT ---
+function Mission() {
+  return (
+    <section style={{ padding: '60px 20px', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginBottom: '40px' }}>
+        <h2 style={{ color: '#333' }}>Our Mission</h2>
+        <p style={{ fontSize: '18px', color: '#666' }}>
+          To empower every local business with a world-class online presence, 
+          making technology accessible and profitable for everyone.
+        </p>
+      </div>
+      <div>
+        <h2 style={{ color: '#333' }}>Our Vision</h2>
+        <p style={{ fontSize: '18px', color: '#666' }}>
+          To be the most trusted and innovative web agency in Malaysia by 2030.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// --- 3. SERVICES COMPONENT ---
+function Services() {
+  const services = [
+    { title: "Web Development", icon: "💻" },
+    { title: "SEO Optimization", icon: "🚀" },
+    { title: "Mobile App Design", icon: "📱" }
+  ];
+
+  return (
+    <section style={{ padding: '60px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
+      <h2>Our Services</h2>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '30px', flexWrap: 'wrap' }}>
+        {services.map((item, index) => (
+          <div key={index} style={{ background: 'white', padding: '30px', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', width: '200px' }}>
+             <div style={{ fontSize: '40px' }}>{item.icon}</div>
+             <h3>{item.title}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// --- 4. TEAM COMPONENT ---
+function Team() {
+  const members = [
+    { name: "Ali", role: "Team Lead", photo: "https://via.placeholder.com/150" },
+    { name: "Siti", role: "UI Designer", photo: "https://via.placeholder.com/150" },
+    { name: "Chong", role: "Developer", photo: "https://via.placeholder.com/150" },
+    { name: "Muthu", role: "Content", photo: "https://via.placeholder.com/150" }
+  ];
+
+  return (
+    <section style={{ padding: '60px', textAlign: 'center' }}>
+      <h2>Meet Our Team</h2>
+      <p style={{ marginBottom: '40px' }}>The minds behind the magic.</p>
+      
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
+        {members.map((member, index) => (
+          <div key={index} style={{ border: '1px solid #eee', padding: '20px', borderRadius: '15px', width: '200px', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
+            <img 
+              src={member.photo} 
+              alt={member.name} 
+              style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover', marginBottom: '15px' }} 
+            />
+            <h3 style={{ margin: '10px 0 5px 0' }}>{member.name}</h3>
+            <p style={{ color: 'gray', margin: '0' }}>{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// --- MAIN APP ---
 function App() {
   return (
     <div className="App">
+      <Intro /> 
+      <Mission />
+      <Services />
+      <Team />
       
-      {/* SECTION 1: Header & Company Info */}
-      <header style={{ padding: '20px', backgroundColor: '#282c34', color: 'white' }}>
-        <h1>My IT Company</h1>
-        <p>We build the future of technology.</p>
-      </header>
-
-      {/* SECTION 2: Mission & Vision */}
-      <section style={{ padding: '20px' }}>
-        <h2>Our Mission</h2>
-        <p>To provide the best software solutions.</p>
-        
-        <h2>Our Vision</h2>
-        <p>To be the number one tech company in the world.</p>
-      </section>
-
-      {/* SECTION 3: Our Service */}
-      <section style={{ padding: '20px' }}>
-        <h2>Our services</h2>
-        <p>kondensasi</p>
-      </section>
-
-      {/* SECTION 4: The Team */}
-      <section style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
-        <h2>Meet Our Team</h2>
-        <p>Team member photos will go here!</p>
-      </section>
-
+      <footer style={{ padding: '20px', background: '#222', color: 'white', textAlign: 'center' }}>
+        <p>&copy; 2026 PixelPerfect Designs. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
