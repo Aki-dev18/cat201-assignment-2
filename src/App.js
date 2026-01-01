@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import websiteImg from './website.jpg';
 
 // --- 1. INTRO COMPONENT (Renamed from Hero) ---
 function Intro() {
@@ -38,6 +39,7 @@ function Mission() {
 
 // --- 3. SERVICES COMPONENT ---
 function Services() {
+
   const services = [
     { title: "Web Development", icon: "💻" },
     { title: "SEO Optimization", icon: "🚀" },
@@ -47,6 +49,21 @@ function Services() {
   return (
     <section style={{ padding: '60px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
       <h2>Our Services</h2>
+      
+      <div>
+        <img 
+          src={websiteImg} 
+          alt="Company Services" 
+          style={{ width: '100%', maxWidth: '500px', borderRadius: '10px',marginLeft: '0px',display: 'block',backgroundColor: '#444141ff',padding: '10px'}} 
+        />
+       </div>
+
+       <div style={{paddingLeft: '195px',textAlign: 'left' }}> 
+        <h5>Website Creation</h5>
+       </div> 
+       
+      
+
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '30px', flexWrap: 'wrap' }}>
         {services.map((item, index) => (
           <div key={index} style={{ background: 'white', padding: '30px', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', width: '200px' }}>
