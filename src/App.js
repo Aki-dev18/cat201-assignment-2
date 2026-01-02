@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
 import websiteImg from './website.jpg';
+import Ads from './ads.mp4'; 
+import UIImg from './UIImg.jpg';
+import AppVid from './app.mp4';
+import WebVid from './web.mp4';
+import UIVid from './UIvid.mp4';
+import threeDVid from './3d.mp4';
 
 // --- 1. INTRO COMPONENT (Renamed from Hero) ---
 function Intro() {
@@ -49,19 +55,119 @@ function Services() {
   return (
     <section style={{ padding: '60px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
       <h2>Our Services</h2>
+
       
+     <div   style={{ // box them in one container
+    display: 'flex', // sit next to each other
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '30px',
+    marginTop: '30px',
+    flexWrap: 'wrap'   
+  }}>
       <div>
-        <img 
-          src={websiteImg} 
-          alt="Company Services" 
-          style={{ width: '100%', maxWidth: '500px', borderRadius: '10px',marginLeft: '0px',display: 'block',backgroundColor: '#444141ff',padding: '10px'}} 
-        />
+       <video 
+            src={WebVid} 
+            autoPlay loop muted playsInline
+            style={{ 
+              width: '400px', 
+              maxWidth: '400px', 
+              borderRadius: '10px', 
+              height: '210px',
+              display: 'block',
+              objectFit: 'cover',
+              backgroundColor: '#444141ff',padding: '3px' 
+            }} 
+          ></video>
+
+          <h5>Website Development</h5>
+       </div> 
+
+      <div>
+       <video 
+            src={UIVid} 
+            autoPlay loop muted playsInline
+            style={{ 
+              width: '400px', 
+              maxWidth: '400px', 
+              borderRadius: '10px', 
+              height: '210px',
+              display: 'block',
+              objectFit: 'cover',
+              backgroundColor: '#444141ff',padding: '3px' 
+            }} 
+          ></video>
+
+          <h5>UI Design</h5>
+       </div>  
+
+      <div>
+       <video 
+            src={Ads} 
+            autoPlay loop muted playsInline
+            style={{ 
+              width: '400px', 
+              maxWidth: '400px', 
+              borderRadius: '10px', 
+              height: '210px',
+              display: 'block',
+              objectFit: 'cover',
+              backgroundColor: '#444141ff',padding: '3px' 
+            }} 
+          ></video>
+
+          <h5>Advertisement Video</h5>
        </div>
 
-       <div style={{paddingLeft: '195px',textAlign: 'left' }}> 
-        <h5>Website Creation</h5>
+             
+    </div>   
+  <div   style={{ // box them in one container
+    display: 'flex', // sit next to each other
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '30px',
+    marginTop: '30px',
+    flexWrap: 'wrap'   
+  }}>
+    
+          <div>
+       <video 
+            src={AppVid} 
+            autoPlay loop muted playsInline
+            style={{ 
+              width: '400px', 
+              maxWidth: '400px', 
+              borderRadius: '10px', 
+              height: '210px',
+              display: 'block',
+              objectFit: 'cover',
+              backgroundColor: '#444141ff',padding: '3px' 
+            }} 
+          ></video>
+
+          <h5>App Development</h5>
        </div> 
-       
+
+                 <div>
+       <video 
+            src={threeDVid} 
+            autoPlay loop muted playsInline
+            style={{ 
+              width: '400px', 
+              maxWidth: '400px', 
+              borderRadius: '10px', 
+              height: '210px',
+              display: 'block',
+              objectFit: 'cover',
+              backgroundColor: '#444141ff',padding: '3px' 
+            }} 
+          ></video>
+
+          <h5>3D Animation</h5>
+       </div> 
+    
+    
+    </div> 
       
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '30px', flexWrap: 'wrap' }}>
