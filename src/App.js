@@ -42,141 +42,109 @@ function Mission() {
     </section>
   );
 }
+// for servicee
+const ServiceBlock = ({ videoSource, label, description }) => {
+  const [isHovering, setIsHovering] = React.useState(false);
+
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <div 
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        style={{ 
+          position: 'relative', 
+          width: '400px', 
+          height: '210px', 
+          borderRadius: '10px', 
+          border: isHovering ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+          overflow: 'hidden',
+          backgroundColor: '#000',
+          // --- ADD THESE THREE LINES ---
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Smooths the movement
+    transform: isHovering ? 'translateY(-10px)' : 'translateY(0)', // Moves it up 10px
+    boxShadow: isHovering ? '0 20px 40px rgba(0,0,0,0.3)' : '0 4px 10px rgba(0,0,0,0.1)', // Adds depth
+    // -----------------------------
+          
+        }}
+      >
+        <video 
+          src={videoSource} 
+          autoPlay loop muted playsInline
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'cover',
+            filter: isHovering ? 'brightness(0.3)' : 'brightness(1)',
+            transform: isHovering ? 'scale(1.1)' : 'scale(1)',
+            transition: '0.4s'
+          }} 
+        />
+        <div style={{ // text layer
+          position: 'absolute',
+          top: 0, left: 0, width: '100%', height: '100%',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          color: 'white', padding: '20px', textAlign: 'center',
+          opacity: isHovering ? 1 : 0,
+          transition: '0.4s',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))',
+          backdropFilter: 'blur(8px)',
+          pointerEvents: 'none',
+          letterSpacing: '1px', // This breathes space between each letter
+          lineHeight: '1.6',      // This creates space between lines of text
+                  
+        }}>
+          <p>{description}</p>
+        </div>
+      </div>
+      <h5 style={{ marginTop: '10px' }}>{label}</h5>
+    </div>
+  );
+};
 
 // --- 3. SERVICES COMPONENT ---
 function Services() {
-
-  const services = [
-    { title: "Web Development", icon: "💻" },
-    { title: "SEO Optimization", icon: "🚀" },
-    { title: "Mobile App Design", icon: "📱" }
-  ];
-
   return (
     <section style={{ padding: '60px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
       <h2>Our Services</h2>
 
-      
-     <div   style={{ // box them in one container
-    display: 'flex', // sit next to each other
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '30px',
-    marginTop: '30px',
-    flexWrap: 'wrap'   
-  }}>
-      <div>
-       <video 
-            src={WebVid} 
-            autoPlay loop muted playsInline
-            style={{ 
-              width: '400px', 
-              maxWidth: '400px', 
-              borderRadius: '10px', 
-              height: '210px',
-              display: 'block',
-              objectFit: 'cover',
-              backgroundColor: '#444141ff',padding: '3px' 
-            }} 
-          ></video>
+      {/* Row 1: Web, UI, and Ads */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginTop: '30px', flexWrap: 'wrap' }}>
+        
+        <ServiceBlock 
+          videoSource={WebVid} 
+          label="Website Development" 
+          description="High-performance web applications built with React, Next.js, and Node.js for seamless scalability." 
+        />
 
-          <h5>Website Development</h5>
-       </div> 
+        <ServiceBlock 
+          videoSource={UIVid} 
+          label="UI Design" 
+          description="User-centric interfaces crafted in Figma and Adobe XD, focusing on accessibility and modern aesthetics." 
+        />
 
-      <div>
-       <video 
-            src={UIVid} 
-            autoPlay loop muted playsInline
-            style={{ 
-              width: '400px', 
-              maxWidth: '400px', 
-              borderRadius: '10px', 
-              height: '210px',
-              display: 'block',
-              objectFit: 'cover',
-              backgroundColor: '#444141ff',padding: '3px' 
-            }} 
-          ></video>
+        <ServiceBlock 
+          videoSource={Ads} 
+          label="Advertisement Video" 
+          description="Engaging commercial content edited in Adobe Premiere Pro and After Effects to drive conversions." 
+        />
+        
+      </div>
 
-          <h5>UI Design</h5>
-       </div>  
+      {/* Row 2: Apps and 3D */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginTop: '30px', flexWrap: 'wrap' }}>
+        
+        <ServiceBlock 
+          videoSource={AppVid} 
+          label="App Development" 
+          description="Native and cross-platform mobile solutions using Flutter and React Native for iOS and Android." 
+        />
 
-      <div>
-       <video 
-            src={Ads} 
-            autoPlay loop muted playsInline
-            style={{ 
-              width: '400px', 
-              maxWidth: '400px', 
-              borderRadius: '10px', 
-              height: '210px',
-              display: 'block',
-              objectFit: 'cover',
-              backgroundColor: '#444141ff',padding: '3px' 
-            }} 
-          ></video>
+        <ServiceBlock 
+          videoSource={threeDVid} 
+          label="3D Animation" 
+          description="Photorealistic 3D modeling and motion graphics created using Blender, Cinema 4D, and Unreal Engine." 
+        />
 
-          <h5>Advertisement Video</h5>
-       </div>
-
-             
-    </div>   
-  <div   style={{ // box them in one container
-    display: 'flex', // sit next to each other
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '30px',
-    marginTop: '30px',
-    flexWrap: 'wrap'   
-  }}>
-    
-          <div>
-       <video 
-            src={AppVid} 
-            autoPlay loop muted playsInline
-            style={{ 
-              width: '400px', 
-              maxWidth: '400px', 
-              borderRadius: '10px', 
-              height: '210px',
-              display: 'block',
-              objectFit: 'cover',
-              backgroundColor: '#444141ff',padding: '3px' 
-            }} 
-          ></video>
-
-          <h5>App Development</h5>
-       </div> 
-
-                 <div>
-       <video 
-            src={threeDVid} 
-            autoPlay loop muted playsInline
-            style={{ 
-              width: '400px', 
-              maxWidth: '400px', 
-              borderRadius: '10px', 
-              height: '210px',
-              display: 'block',
-              objectFit: 'cover',
-              backgroundColor: '#444141ff',padding: '3px' 
-            }} 
-          ></video>
-
-          <h5>3D Animation</h5>
-       </div> 
-    
-    
-    </div> 
-      
-
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '30px', flexWrap: 'wrap' }}>
-        {services.map((item, index) => (
-          <div key={index} style={{ background: 'white', padding: '30px', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', width: '200px' }}>
-             <div style={{ fontSize: '40px' }}>{item.icon}</div>
-             <h3>{item.title}</h3>
-          </div>
-        ))}
       </div>
     </section>
   );
