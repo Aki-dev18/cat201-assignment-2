@@ -16,7 +16,7 @@ import faridPic from './farid.jpg';
 function Intro() {
   return (
     <section style={{ padding: '80px', textAlign: 'center', backgroundColor: '#282c34', color: 'white' }}>
-      <h1 style={{ fontSize: '3rem', margin: '0' }}>PixelFactor Designs</h1>
+      <h1 style={{ fontSize: '3rem', margin: '0' }}>PixelPerfect Designs</h1>
       <h3 style={{ fontWeight: '300' }}>We Build Digital Experiences</h3>
       <p style={{ marginTop: '20px' }}>Welcome to the future of web design. We help businesses grow.</p>
       <button style={{ marginTop: '20px', padding: '10px 25px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#61dafb', border: 'none', borderRadius: '5px' }}>
