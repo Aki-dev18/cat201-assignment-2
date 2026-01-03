@@ -7,6 +7,10 @@ import AppVid from './app.mp4';
 import WebVid from './web.mp4';
 import UIVid from './UIvid.mp4';
 import threeDVid from './3d.mp4';
+import nazirulPic from './nazirul.jpg';
+import syedPic from './syed.jpg';
+import izhamPic from './izham.png';
+import faridPic from './farid.jpg';
 
 // --- 1. INTRO COMPONENT (Renamed from Hero) ---
 function Intro() {
@@ -153,10 +157,30 @@ function Services() {
 // --- 4. TEAM COMPONENT ---
 function Team() {
   const members = [
-    { name: "Ali", role: "Team Lead", photo: "https://via.placeholder.com/150" },
-    { name: "Siti", role: "UI Designer", photo: "https://via.placeholder.com/150" },
-    { name: "Chong", role: "Developer", photo: "https://via.placeholder.com/150" },
-    { name: "Muthu", role: "Content", photo: "https://via.placeholder.com/150" }
+    { 
+      name: "Muhammad Nazirul Muazzam Bin Ahmad Faizal", 
+      role: "Team Lead", 
+      photo: nazirulPic,
+      description:"As the Team Lead, Nazirul serves as the visionary and central coordinator for the entire project. His primary responsibility is to oversee the project lifecycle from conception to delivery, ensuring that strict timelines are met and that the team remains aligned with the company's strategic goals. He acts as the bridge between technical execution and client requirements, managing resources effectively to guarantee a high-quality final product."
+    },
+    { 
+      name: " Syed Nur Haikal Al Aziz Bin Syed Baharin", 
+      role: "UI Designer", 
+      photo: syedPic,
+      description: "Syed Nur Haikal is the creative force behind the agency’s visual identity, focusing on crafting intuitive and aesthetically pleasing digital experiences. He is responsible for designing the user interface layout, selecting color palettes, and defining typography to ensure the website is not only beautiful but also easy to navigate. His work centers on User Experience (UX) principles, ensuring that every design element serves a functional purpose for the visitor."
+    },
+    { 
+      name: " Muhammad Izham Bin Shawal", 
+      role: "Developer", 
+      photo: izhamPic,
+      description: "Muhammad Izham acts as the technical architect, translating creative designs into functional, high-performance code. He is tasked with building the underlying structure of the website using React, JavaScript, and CSS, ensuring that the interface is responsive across mobile and desktop devices. His role involves rigorous testing and debugging to maintain a smooth, error-free user experience while handling the deployment and maintenance of the site’s codebase."
+    },
+    { 
+      name: "Muhammad Farid Haikal Bin Khairul Nizam", 
+      role: "Content", 
+      photo: faridPic,
+      description: "Muhammad Farid Haikal is the voice of the brand, responsible for crafting compelling narratives that resonate with the audience. He develops all written content, from the mission statement to service descriptions, ensuring clarity, tone consistency, and engagement. His role is crucial in communicating the value of PixelPerfect Designs to potential clients, transforming static information into persuasive marketing copy that drives business growth."
+    }
   ];
 
   return (
@@ -166,14 +190,14 @@ function Team() {
       
       <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
         {members.map((member, index) => (
-          <div key={index} style={{ border: '1px solid #eee', padding: '20px', borderRadius: '15px', width: '200px', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
+          <div key={index} style={{ border: '1px solid #eee', padding: '20px', borderRadius: '15px', width: '45%', minWidth: '300px', flexGrow: 1, boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
             <img 
-              src={member.photo} 
-              alt={member.name} 
+              src={member.photo}
               style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover', marginBottom: '15px' }} 
             />
             <h3 style={{ margin: '10px 0 5px 0' }}>{member.name}</h3>
-            <p style={{ color: 'gray', margin: '0' }}>{member.role}</p>
+            <p style={{ color: 'black', margin: '0 0 5px 0', fontWeight: 'bold' }}>{member.role}</p>
+            <p style={{ color: 'black', margin: '0', textAlign:'justify' }}>{member.description}</p>
           </div>
         ))}
       </div>
