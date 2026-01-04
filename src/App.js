@@ -11,6 +11,7 @@ import nazirulPic from './nazirul.jpg';
 import syedPic from './syed.jpg';
 import izhamPic from './izham.png';
 import faridPic from './farid.jpg';
+import missionPic from './MissionBackground.jpg';
 
 // --- 1. INTRO COMPONENT (Renamed from Hero) ---
 function Intro() {
@@ -29,19 +30,75 @@ function Intro() {
 // --- 2. MISSION COMPONENT ---
 function Mission() {
   return (
-    <section style={{ padding: '60px 20px', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+    <section style={{ 
+      padding: '60px 20px', 
+      textAlign: 'center', 
+
+      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1)), url(${missionPic})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+
+      boxshadow: 'inset 0 0 20px rbga(0, 0, 0, 0.05)',
+    }}>
+
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+
       <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ color: '#333' }}>Our Mission</h2>
-        <p style={{ fontSize: '18px', color: '#666' }}>
+        <h2 style={{ color: '#ffffffff' }}>Our Mission</h2>
+        <p style={{ fontSize: '18px', color: '#b1b1b1ff' }}>
           To empower every local business with a world-class online presence, 
           making technology accessible and profitable for everyone.
         </p>
       </div>
-      <div>
-        <h2 style={{ color: '#333' }}>Our Vision</h2>
-        <p style={{ fontSize: '18px', color: '#666' }}>
+      <div style={{ marginBottom: '40px' }}>
+        <h2 style={{ color: '#ffffffff' }}>Our Vision</h2>
+        <p style={{ fontSize: '18px', color: '#b1b1b1ff' }}>
           To be the most trusted and innovative web agency in Malaysia by 2030.
         </p>
+      </div>
+
+      <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          gap: '40px', 
+          flexWrap: 'wrap', 
+          textAlign: 'left', // Professional lists look better left-aligned
+          marginTop: '40px',
+          borderTop: '1px solid #ddd',
+          paddingTop: '40px'
+        }}></div>
+
+      <div style={{ flex: '1', minWidth: '300px' }}>
+            <h3 style={{ color: '#ffffffff', borderLeft: '4px solid #61dafb', paddingLeft: '15px' }}>Strategic Goals</h3>
+            <ul style={{ listStyle: 'none', padding: 0, color: '#b1b1b1ff', lineHeight: '1.8' }}>
+              <li style={{ marginBottom: '15px' }}>
+                <strong>Market Leadership:</strong> Establish PixelPerfect as the standard-bearer for web quality in the Northern Region.
+              </li>
+              <li style={{ marginBottom: '15px' }}>
+                <strong>Continuous Innovation:</strong> Integrate emerging technologies like AI and Web3 into standard client packages.
+              </li>
+              <li>
+                <strong>Client Retention:</strong> Shift from project-based revenue to a sustainable, retainer-based partnership model.
+              </li>
+            </ul>
+          </div>
+
+      <div style={{ flex: '1', minWidth: '300px' }}>
+            <h3 style={{ color: '#ffffffff', borderLeft: '4px solid #b1b1b1ff', paddingLeft: '15px' }}>FY2026 Objectives</h3>
+            <ul style={{ listStyle: 'none', padding: 0, color: '#b1b1b1ff', lineHeight: '1.8' }}>
+              <li style={{ marginBottom: '15px' }}>
+                <strong>Acquisition:</strong> Onboard 50 enterprise-tier clients by Q4 2026.
+              </li>
+              <li style={{ marginBottom: '15px' }}>
+                <strong>Quality Assurance:</strong> Achieve a Net Promoter Score (NPS) of 70+ through rigorous UX testing.
+              </li>
+              <li>
+                <strong>Efficiency:</strong> Reduce average project deployment time by 20% using proprietary templates.
+              </li>
+            </ul>
+          </div>
+
       </div>
     </section>
   );
