@@ -19,7 +19,7 @@ function Intro() {
     <section style={{ padding: '80px', textAlign: 'center', backgroundColor: '#282c34', color: 'white' }}>
       <h1 style={{ fontSize: '3rem', margin: '0' }}>WhatAWebb</h1>
       <h3 style={{ fontWeight: '300' }}>Your Vision, Our Design</h3>
-      <p style={{ marginTop: '20px' }}>Long gone are the days where you have to design yor own design. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startup or established company make their vision of a perfect website a reality. We tailor every design to our client's needs so that every single of our</p>
+      <p style={{ marginTop: '20px'}}>Long gone are the days where you have to design your own website. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startups and established companies make their vision of a perfect website a reality. We tailor every design to our client's needs so that peak customer satisfaction can be achieved. We also pay attention to the most minute details to make sure that every single one of our designs is unique.</p>
       <button style={{ marginTop: '20px', padding: '10px 25px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#61dafb', border: 'none', borderRadius: '5px' }}>
         Contact Us
       </button>
@@ -73,7 +73,7 @@ function Mission() {
             <h3 style={{ color: '#ffffffff', borderLeft: '4px solid #61dafb', paddingLeft: '15px' }}>Strategic Goals</h3>
             <ul style={{ listStyle: 'none', padding: 0, color: '#b1b1b1ff', lineHeight: '1.8' }}>
               <li style={{ marginBottom: '15px' }}>
-                <strong>Market Leadership:</strong> Establish PixelPerfect as the standard-bearer for web quality in the Northern Region.
+                <strong>Market Leadership:</strong> Establish WhatAWebb as the standard-bearer for web quality in the Northern Region.
               </li>
               <li style={{ marginBottom: '15px' }}>
                 <strong>Continuous Innovation:</strong> Integrate emerging technologies like AI and Web3 into standard client packages.
@@ -236,7 +236,7 @@ function Team() {
       name: "Muhammad Farid Haikal Bin Khairul Nizam", 
       role: "Content", 
       photo: faridPic,
-      description: "Muhammad Farid Haikal is the voice of the brand, responsible for crafting compelling narratives that resonate with the audience. He develops all written content, from the mission statement to service descriptions, ensuring clarity, tone consistency, and engagement. His role is crucial in communicating the value of PixelPerfect Designs to potential clients, transforming static information into persuasive marketing copy that drives business growth."
+      description: "Muhammad Farid Haikal is the voice of the brand, responsible for crafting compelling narratives that resonate with the audience. He develops all written content, from the mission statement to service descriptions, ensuring clarity, tone consistency, and engagement. His role is crucial in communicating the value of WhatAWebb to potential clients, transforming static information into persuasive marketing copy that drives business growth."
     }
   ];
 
@@ -272,7 +272,7 @@ function App() {
       <Team />
       
       <footer style={{ padding: '20px', background: '#222', color: 'white', textAlign: 'center' }}>
-        <p>&copy; 2026 PixelPerfect Designs. All rights reserved.</p>
+        <p>&copy; 2026 WhatAWebb. All rights reserved.</p>
       </footer>
     </div>
   );
