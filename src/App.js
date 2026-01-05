@@ -17,9 +17,9 @@ import missionPic from './MissionBackground.jpg';
 function Intro() {
   return (
     <section style={{ padding: '80px', textAlign: 'center', backgroundColor: '#282c34', color: 'white' }}>
-      <h1 style={{ fontSize: '3rem', margin: '0' }}>PixelPerfect Designs</h1>
-      <h3 style={{ fontWeight: '300' }}>We Build Digital Experiences</h3>
-      <p style={{ marginTop: '20px' }}>Welcome to the future of web design. We help businesses grow.</p>
+      <h1 style={{ fontSize: '3rem', margin: '0' }}>WhatAWebb</h1>
+      <h3 style={{ fontWeight: '300' }}>Your Vision, Our Design</h3>
+      <p style={{ marginTop: '20px' }}>Long gone are the days where you have to design yor own design. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startup or established company make their vision of a perfect website a reality. We tailor every design to our client's needs so that every single of our</p>
       <button style={{ marginTop: '20px', padding: '10px 25px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#61dafb', border: 'none', borderRadius: '5px' }}>
         Contact Us
       </button>
