@@ -12,11 +12,22 @@ import syedPic from './syed.jpg';
 import izhamPic from './izham.png';
 import faridPic from './farid.jpg';
 import missionPic from './MissionBackground.jpg';
+import companyLogo from './WhatAWebb_logo.png';
 
 // --- 1. INTRO COMPONENT (Renamed from Hero) ---
 function Intro() {
   return (
     <section style={{ padding: '80px', textAlign: 'center', backgroundColor: '#282c34', color: 'white' }}>
+      <img
+      src={companyLogo}
+      alt="WhatAWebb Logo"
+      style={{
+        width: '500px',
+        maxWidth: '100%',
+        height: 'auto',
+        marginBottom: '20px'
+      }}
+      />
       <h1 style={{ fontSize: '3rem', margin: '0' }}>WhatAWebb</h1>
       <h3 style={{ fontWeight: '300' }}>Your Vision, Our Design</h3>
       <p style={{ marginTop: '20px'}}>Long gone are the days where you have to design your own website. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startups and established companies make their vision of a perfect website a reality. We tailor every design to our client's needs so that peak customer satisfaction can be achieved. We also pay attention to the most minute details to make sure that every single one of our designs is unique.</p>
