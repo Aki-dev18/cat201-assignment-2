@@ -11,7 +11,7 @@ import nazirulPic from './nazirul.jpg';
 import syedPic from './syed.jpg';
 import izhamPic from './izham.png';
 import faridPic from './farid.jpg';
-import missionPic from './MissionBackground.jpg';
+import missionPic from './9270553.jpg';
 import companyLogo from './WhatAWebb_logo.png';
 
 // --- 1. INTRO COMPONENT (Renamed from Hero) ---
@@ -56,15 +56,15 @@ function Mission() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
       <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ color: '#ffffffff' }}>Our Mission</h2>
-        <p style={{ fontSize: '18px', color: '#b1b1b1ff' }}>
+        <h2 style={{ color: '#000000ff' }}>Our Mission</h2>
+        <p style={{ fontSize: '18px', color: '#252525ff' }}>
           To empower every local business with a world-class online presence, 
           making technology accessible and profitable for everyone.
         </p>
       </div>
       <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ color: '#ffffffff' }}>Our Vision</h2>
-        <p style={{ fontSize: '18px', color: '#b1b1b1ff' }}>
+        <h2 style={{ color: '#000000ff' }}>Our Vision</h2>
+        <p style={{ fontSize: '18px', color: '#252525ff' }}>
           To be the most trusted and innovative web agency in Malaysia by 2030.
         </p>
       </div>
@@ -80,9 +80,9 @@ function Mission() {
           paddingTop: '40px'
         }}></div>
 
-      <div style={{ flex: '1', minWidth: '300px' }}>
-            <h3 style={{ color: '#ffffffff', borderLeft: '4px solid #61dafb', paddingLeft: '15px' }}>Strategic Goals</h3>
-            <ul style={{ listStyle: 'none', padding: 0, color: '#b1b1b1ff', lineHeight: '1.8' }}>
+      <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ color: '#000000ff'}}>Strategic Goals</h2>
+            <ul style={{ listStyle: 'none', padding: 0, color: '#252525ff', lineHeight: '1.8' }}>
               <li style={{ marginBottom: '15px' }}>
                 <strong>Market Leadership:</strong> Establish WhatAWebb as the standard-bearer for web quality in the Northern Region.
               </li>
@@ -96,8 +96,8 @@ function Mission() {
           </div>
 
       <div style={{ flex: '1', minWidth: '300px' }}>
-            <h3 style={{ color: '#ffffffff', borderLeft: '4px solid #b1b1b1ff', paddingLeft: '15px' }}>FY2026 Objectives</h3>
-            <ul style={{ listStyle: 'none', padding: 0, color: '#b1b1b1ff', lineHeight: '1.8' }}>
+            <h2 style={{ color: '#000000ff'}}>Objectives</h2>
+            <ul style={{ listStyle: 'none', padding: 0, color: '#252525ff', lineHeight: '1.8' }}>
               <li style={{ marginBottom: '15px' }}>
                 <strong>Acquisition:</strong> Onboard 50 enterprise-tier clients by Q4 2026.
               </li>
