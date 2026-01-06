@@ -25,12 +25,13 @@ function Intro() {
         width: '500px',
         maxWidth: '100%',
         height: 'auto',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        alignItems: 'center'
       }}
       />
-      <h1 style={{ fontSize: '3rem', margin: '0' }}>WhatAWebb</h1>
-      <h3 style={{ fontWeight: '300' }}>Your Vision, Our Design</h3>
-      <p style={{ marginTop: '20px'}}>Long gone are the days where you have to design your own website. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startups and established companies make their vision of a perfect website a reality. We tailor every design to our client's needs so that peak customer satisfaction can be achieved. We also pay attention to the most minute details to make sure that every single one of our designs is unique.</p>
+      <h1 style={{ fontSize: '3rem', margin: '0', textAlign: 'center'}}>WhatAWebb</h1>
+      <h3 style={{ fontWeight: '300', textAlign: 'center' }}>Your Vision, Our Design</h3>
+      <p style={{ marginTop: '20px', textAlign: 'justify'}}>Long gone are the days where you have to design your own website. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startups and established companies make their vision of a perfect website a reality. We tailor every design to our client's needs so that peak customer satisfaction can be achieved. We also pay attention to the most minute details to make sure that every single one of our designs is unique.</p>
       <button style={{ marginTop: '20px', padding: '10px 25px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#61dafb', border: 'none', borderRadius: '5px' }}>
         Contact Us
       </button>
