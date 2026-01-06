@@ -115,7 +115,8 @@ function Mission() {
     </section>
   );
 }
-// for servicee
+
+// for service
 const ServiceBlock = ({ videoSource, label, description }) => {
   const [isHovering, setIsHovering] = React.useState(false);
 
@@ -132,13 +133,12 @@ const ServiceBlock = ({ videoSource, label, description }) => {
           border: isHovering ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
           overflow: 'hidden',
           backgroundColor: '#000',
-          // --- ADD THESE THREE LINES ---
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Smooths the movement
-    transform: isHovering ? 'translateY(-10px)' : 'translateY(0)', // Moves it up 10px
-    boxShadow: isHovering ? '0 20px 40px rgba(0,0,0,0.3)' : '0 4px 10px rgba(0,0,0,0.1)', // Adds depth
-    // -----------------------------
-          
-        }}
+
+          //transitiion
+          transition: 'transform 0.3s ease, box-shadow 0.3s ease', 
+          transform: isHovering ? 'translateY(-10px)' : 'translateY(0)', 
+          boxShadow: isHovering ? '0 20px 40px rgba(0,0,0,0.3)' : '0 4px 10px rgba(0,0,0,0.1)', 
+                }}
       >
         <video 
           src={videoSource} 
@@ -156,14 +156,15 @@ const ServiceBlock = ({ videoSource, label, description }) => {
           position: 'absolute',
           top: 0, left: 0, width: '100%', height: '100%',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: 'white', padding: '20px', textAlign: 'center',
+          color: 'white', padding: '5px', textAlign: 'center',
           opacity: isHovering ? 1 : 0,
           transition: '0.4s',
           background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))',
           backdropFilter: 'blur(8px)',
           pointerEvents: 'none',
-          letterSpacing: '1px', // This breathes space between each letter
-          lineHeight: '1.6',      // This creates space between lines of text
+          letterSpacing: '1px', 
+          lineHeight: '1.4',      
+          
                   
         }}>
           <p>{description}</p>
@@ -174,13 +175,13 @@ const ServiceBlock = ({ videoSource, label, description }) => {
   );
 };
 
-// --- 3. SERVICES COMPONENT ---
+
 function Services() {
   return (
     <section style={{ padding: '60px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
       <h2>Our Services</h2>
 
-      {/* Row 1: Web, UI, and Ads */}
+      
       <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginTop: '30px', flexWrap: 'wrap' }}>
         
         <ServiceBlock 
