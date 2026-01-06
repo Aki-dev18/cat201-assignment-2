@@ -261,6 +261,7 @@ function Team() {
         {members.map((member, index) => (
           <div key={index} style={{ border: '1px solid #eee', padding: '20px', borderRadius: '15px', width: '45%', minWidth: '300px', flexGrow: 1, boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
             <img 
+              alt="Member photo"
               src={member.photo}
               style={{ borderRadius: '50%', width: '100px', height: '100px', objectFit: 'cover', marginBottom: '15px' }} 
             />
