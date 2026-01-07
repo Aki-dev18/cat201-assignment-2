@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import myBackground from './introbg.jpg';
 import websiteImg from './website.jpg';
 import Ads from './ads.mp4'; 
 import UIImg from './UIImg.jpg';
@@ -14,131 +15,241 @@ import faridPic from './farid.jpg';
 import missionPic from './9270553.jpg';
 import companyLogo from './WhatAWebb_logo.png';
 
-// --- 1. INTRO COMPONENT (Renamed from Hero) ---
+// --- NAVBAR COMPONENT ---
+function Navbar() {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navStyle = {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    backgroundColor: 'rgba(34, 34, 34, 0.95)',
+    padding: '10px 0',
+    textAlign: 'center',
+    zIndex: '2000', // Increased z-index to be safe
+    boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'nowrap', // Forces buttons to stay on one line
+    overflowX: 'auto',  // Allows tiny scroll if screen is VERY small
+  };
+
+  const buttonStyle = {
+    background: 'transparent',
+    border: 'none',
+    color: 'white',
+    fontSize: '11px', // Reduced font size to fit small screens
+    fontWeight: 'bold',
+    margin: '0 5px',  // Reduced margins significantly
+    cursor: 'pointer',
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px', // Reduced spacing
+    padding: '8px 5px',
+    whiteSpace: 'nowrap' // Prevents text from wrapping
+  };
+
+  return (
+    <nav style={navStyle}>
+      <button style={buttonStyle} onClick={() => scrollToSection('intro')}>Home</button>
+      <button style={buttonStyle} onClick={() => scrollToSection('mission')}>Mission</button>
+      <button style={buttonStyle} onClick={() => scrollToSection('services')}>Services</button>
+      <button style={buttonStyle} onClick={() => scrollToSection('team')}>Team</button>
+    </nav>
+  );
+}
+
+// --- 1. INTRO COMPONENT ---
 function Intro() {
   return (
-    <section style={{ padding: '80px', textAlign: 'center', backgroundColor: '#282c34', color: 'white' }}>
-      <img
-      src={companyLogo}
-      alt="WhatAWebb Logo"
-      style={{
-        width: '500px',
-        maxWidth: '100%',
-        height: 'auto',
-        marginBottom: '20px',
-        alignItems: 'center'
-      }}
-      />
-      <h1 style={{ fontSize: '3rem', margin: '0', textAlign: 'center'}}>WhatAWebb</h1>
-      <h3 style={{ fontWeight: '300', textAlign: 'center' }}>Your Vision, Our Design</h3>
-      <p style={{ marginTop: '20px', textAlign: 'justify'}}>Long gone are the days where you have to design your own website. The advancement in web design is here courtesy of our team at WhatAWebb. Here in this company, we help startups and established companies make their vision of a perfect website a reality. We tailor every design to our client's needs so that peak customer satisfaction can be achieved. We also pay attention to the most minute details to make sure that every single one of our designs is unique.</p>
-      <button style={{ marginTop: '20px', padding: '10px 25px', fontSize: '16px', cursor: 'pointer', backgroundColor: '#61dafb', border: 'none', borderRadius: '5px' }}>
-        Contact Us
-      </button>
+    <section id="intro" style={{ 
+      padding: '0 20px', 
+      textAlign: 'center', 
+      backgroundImage: `url(${myBackground})`, 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'center', 
+      color: 'white', 
+      minHeight: '100vh', 
+      display:'flex', 
+      flexDirection:'column', 
+      justifyContent:'center', 
+      alignItems:'center',
+      paddingTop: '80px', // Space for navbar
+      paddingBottom: '80px'
+    }}>
+      <div style={{ 
+        backgroundColor: 'rgba(0, 0, 0, 0.7)', 
+        padding: '30px 20px', 
+        borderRadius: '15px', 
+        maxWidth: '800px', 
+        width: '100%',        // Fits mobile width
+        margin: 'auto',
+        boxSizing: 'border-box' // CRITICAL FIX
+      }}>
+        <img
+          src={companyLogo}
+          alt="WhatAWebb Logo"
+          style={{
+            width: '100%',
+            maxWidth: '500px', // Ensures logo shrinks on phone
+            height: 'auto',
+            marginBottom: '20px',
+          }}
+        />
+        <h1 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)', margin: '0', textAlign: 'center'}}>
+          WhatAWebb
+        </h1>
+        <h3 style={{ fontWeight: '300', textAlign: 'center' }}>Your Vision, Our Design</h3>
+        <p style={{ marginTop: '20px', textAlign: 'justify', lineHeight: '1.6'}}>
+          Long gone are the days where you have to struggle through designing your own website from scratch. The future of digital presence is here, courtesy of our dedicated team at PixelPerfect Designs. We specialize in helping both ambitious startups and established enterprises turn their vision of a perfect website into a tangible reality. We believe that a website is more than just code; it is the digital face of your brand. That is why we tailor every single pixel to meet your specific business goals, ensuring that peak customer satisfaction is not just a goal, but a guarantee. By paying close attention to the most minute details—from seamless navigation to responsive layouts—we ensure that every design we craft is as unique as the business it represents. Let us handle the complexity of web development so you can focus on what you do best: growing your business.
+        </p>
+      </div>
     </section>
   );
 }
 
 // --- 2. MISSION COMPONENT ---
 function Mission() {
+  const [hovered, setHovered] = useState(null);
+
+  const getContainerStyle = (section) => ({
+    padding: '20px',
+    borderRadius: '15px',
+    transition: 'all 0.3s ease',
+    backgroundColor: hovered === section ? '#007bff' : 'transparent',
+    boxSizing: 'border-box' // CRITICAL FIX
+  });
+
+  const getTitleStyle = (section) => ({
+    color: hovered === section ? 'white' : '#000000ff',
+  });
+
+  const getTextStyle = (section) => ({
+    fontSize: '18px',
+    color: hovered === section ? 'white' : '#252525ff',
+    textAlign: 'justify',
+  });
+
+  const getListStyle = (section) => ({
+    listStyle: 'none',
+    padding: 0,
+    color: hovered === section ? 'white' : '#252525ff',
+    lineHeight: '1.8',
+    textAlign: 'justify',
+  });
+
   return (
-    <section style={{ 
+    <section id="mission" style={{ 
       padding: '60px 20px', 
       textAlign: 'center', 
-
-      backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1)), url(${missionPic})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-
-      boxshadow: 'inset 0 0 20px rbga(0, 0, 0, 0.05)',
+      backgroundColor: '#ffffff'
     }}>
 
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
 
-      <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ color: '#000000ff' }}>Our Mission</h2>
-        <p style={{ fontSize: '18px', color: '#252525ff' }}>
-          To empower every local business with a world-class online presence, 
-          making technology accessible and profitable for everyone.
-        </p>
-      </div>
-      <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ color: '#000000ff' }}>Our Vision</h2>
-        <p style={{ fontSize: '18px', color: '#252525ff' }}>
-          To be the most trusted and innovative web agency in Malaysia by 2030.
+      <div 
+        onMouseEnter={() => setHovered('mission')}
+        onMouseLeave={() => setHovered(null)}
+        style={{ ...getContainerStyle('mission'), marginBottom: '40px' }}
+      >
+        <h2 style={getTitleStyle('mission')}>Our Mission</h2>
+        <p style={getTextStyle('mission')}>
+          Our mission is to democratize digital excellence by empowering every local business, regardless of its size or industry, with a world-class online presence. We strive to bridge the technological divide, ensuring that sophisticated web solutions are not only accessible but also serve as a powerful, profitable engine for growth. By simplifying the complexities of the digital world, we enable our partners to focus on what they do best while we handle the rest.
         </p>
       </div>
 
-      <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          gap: '40px', 
-          flexWrap: 'wrap', 
-          textAlign: 'left', // Professional lists look better left-aligned
-          marginTop: '40px',
-          borderTop: '1px solid #ddd',
-          paddingTop: '40px'
-        }}></div>
+      <div 
+        onMouseEnter={() => setHovered('vision')}
+        onMouseLeave={() => setHovered(null)}
+        style={{ ...getContainerStyle('vision'), marginBottom: '20px' }}
+      >
+        <h2 style={getTitleStyle('vision')}>Our Vision</h2>
+        <p style={getTextStyle('vision')}>
+          We envision a future where WhatAWebb stands as the undisputed beacon of trust and innovation within the Malaysian digital landscape. Our goal is to set the industry benchmark for creativity, technical reliability, and user-centric design, establishing ourselves as the premier web agency in the nation by the year 2030. We aspire to be the catalyst that transforms local Malaysian enterprises into global digital competitors.
+        </p>
+      </div>
 
-      <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ color: '#000000ff'}}>Strategic Goals</h2>
-            <ul style={{ listStyle: 'none', padding: 0, color: '#252525ff', lineHeight: '1.8' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', marginTop: '0', paddingTop: '20px'}}>
+
+      <div 
+        onMouseEnter={() => setHovered('goals')}
+        onMouseLeave={() => setHovered(null)}
+        style={{ ...getContainerStyle('goals'), minWidth: '300px', flex: '1', marginBottom: '0px' }}
+      >
+            <h2 style={getTitleStyle('goals')}>Strategic Goals</h2>
+            <ul style={getListStyle('goals')}>
               <li style={{ marginBottom: '15px' }}>
-                <strong>Market Leadership:</strong> Establish WhatAWebb as the standard-bearer for web quality in the Northern Region.
+                <strong>Market Leadership:</strong> To solidify WhatAWebb’s position as the definitive standard-bearer for web quality across the Northern Region, ensuring that our brand becomes synonymous with digital excellence, reliability, and superior craftsmanship.
               </li>
               <li style={{ marginBottom: '15px' }}>
-                <strong>Continuous Innovation:</strong> Integrate emerging technologies like AI and Web3 into standard client packages.
+                <strong>Continuous Innovation:</strong> To relentlessly pursue technological advancement by actively integrating emerging frontiers—such as Artificial Intelligence (AI) and Web3 decentralized architectures—into our standard client packages, ensuring our clients always stay ahead of the competitive curve.
               </li>
               <li>
-                <strong>Client Retention:</strong> Shift from project-based revenue to a sustainable, retainer-based partnership model.
+                <strong>Client Retention:</strong> To fundamentally transform our business model from transactional, project-based interactions to sustainable, long-term retainer partnerships. We aim to become a lifelong digital partner for our clients, fostering deep, enduring relationships that grow alongside their businesses.
               </li>
             </ul>
           </div>
 
-      <div style={{ flex: '1', minWidth: '300px' }}>
-            <h2 style={{ color: '#000000ff'}}>Objectives</h2>
-            <ul style={{ listStyle: 'none', padding: 0, color: '#252525ff', lineHeight: '1.8' }}>
+      <div 
+        onMouseEnter={() => setHovered('objectives')}
+        onMouseLeave={() => setHovered(null)}
+        style={{ ...getContainerStyle('objectives'), minWidth: '300px' }}
+      >
+            <h2 style={getTitleStyle('objectives')}>Objectives</h2>
+            <ul style={getListStyle('objectives')}>
               <li style={{ marginBottom: '15px' }}>
-                <strong>Acquisition:</strong> Onboard 50 enterprise-tier clients by Q4 2026.
+                <strong>Acquisition:</strong> To aggressively expand our market footprint by successfully onboarding 50 high-value, enterprise-tier clients by the fourth quarter of 2026, thereby securing a dominant share of the local market.
               </li>
               <li style={{ marginBottom: '15px' }}>
-                <strong>Quality Assurance:</strong> Achieve a Net Promoter Score (NPS) of 70+ through rigorous UX testing.
+                <strong>Quality Assurance:</strong> To uphold the highest standards of client satisfaction by achieving and maintaining a Net Promoter Score (NPS) of 70+. We will validate this through rigorous, ongoing User Experience (UX) testing and continuous feedback loops.
               </li>
               <li>
-                <strong>Efficiency:</strong> Reduce average project deployment time by 20% using proprietary templates.
+                <strong>Efficiency:</strong> To optimize our operational workflows and reduce average project deployment timelines by 20%. This will be achieved by leveraging our proprietary library of high-performance templates and adopting agile development methodologies to deliver faster results without compromising quality.
               </li>
             </ul>
           </div>
 
+      </div>
       </div>
     </section>
   );
 }
 
-// for service
+// --- 3. SERVICE BLOCK COMPONENT ---
 const ServiceBlock = ({ videoSource, label, description }) => {
   const [isHovering, setIsHovering] = React.useState(false);
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      // FIX: Responsive Sizing
+      width: '90%',           // Fills 90% of the screen width (Mobile & PC)
+      maxWidth: '700px',      // But stops growing at 700px so it doesn't look too huge on PC
+      margin: '0 auto 40px',  // Centers the box and adds 40px space at the bottom
+      boxSizing: 'border-box'
+    }}>
       <div 
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         style={{ 
           position: 'relative', 
-          width: '400px', 
-          height: '210px', 
-          borderRadius: '10px', 
+          width: '100%',         // Fills the container
+          aspectRatio: '16/9',   // Forces the perfect video rectangle shape
+          borderRadius: '15px', 
           border: isHovering ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
           overflow: 'hidden',
           backgroundColor: '#000',
-
-          //transitiion
-          transition: 'transform 0.3s ease, box-shadow 0.3s ease', 
-          transform: isHovering ? 'translateY(-10px)' : 'translateY(0)', 
           boxShadow: isHovering ? '0 20px 40px rgba(0,0,0,0.3)' : '0 4px 10px rgba(0,0,0,0.1)', 
-                }}
+          transition: 'transform 0.3s ease, box-shadow 0.3s ease', 
+          transform: isHovering ? 'translateY(-5px)' : 'translateY(0)', 
+        }}
       >
         <video 
           src={videoSource} 
@@ -147,79 +258,76 @@ const ServiceBlock = ({ videoSource, label, description }) => {
             width: '100%', 
             height: '100%', 
             objectFit: 'cover',
-            filter: isHovering ? 'brightness(0.3)' : 'brightness(1)',
-            transform: isHovering ? 'scale(1.1)' : 'scale(1)',
+            filter: isHovering ? 'brightness(0.4)' : 'brightness(1)',
+            transform: isHovering ? 'scale(1.05)' : 'scale(1)',
             transition: '0.4s'
           }} 
         />
-        <div style={{ // text layer
+        <div style={{ 
           position: 'absolute',
           top: 0, left: 0, width: '100%', height: '100%',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: 'white', padding: '5px', textAlign: 'center',
+          color: 'white', padding: '20px', textAlign: 'center', 
           opacity: isHovering ? 1 : 0,
           transition: '0.4s',
-          background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))',
-          backdropFilter: 'blur(8px)',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3))',
+          backdropFilter: 'blur(5px)',
           pointerEvents: 'none',
-          letterSpacing: '1px', 
-          lineHeight: '1.4',      
-          
-                  
+          lineHeight: '1.5',      
         }}>
-          <p>{description}</p>
+          <p style={{ fontSize: '16px', margin: 0 }}>{description}</p>
         </div>
       </div>
-      <h5 style={{ marginTop: '10px' }}>{label}</h5>
+      <h5 style={{ marginTop: '15px', fontSize: '22px' }}>{label}</h5>
     </div>
   );
 };
 
-
+// --- 4. SERVICES SECTION ---
 function Services() {
   return (
-    <section style={{ padding: '60px', backgroundColor: '#f9f9f9', textAlign: 'center' }}>
-      <h2>Our Services</h2>
+    <section id="services" style={{ 
+      padding: '60px 0', 
+      backgroundColor: '#f9f9f9', 
+      textAlign: 'center',
+      display: 'flex',
+      flexDirection: 'column', // Stacks items vertically
+      alignItems: 'center'     // Centers items horizontally
+    }}>
+      <h2 style={{ fontSize: '2.5rem', marginBottom: '50px' }}>Our Services</h2>
 
+      {/* No more separate rows, just a list of blocks */}
       
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginTop: '30px', flexWrap: 'wrap' }}>
-        
-        <ServiceBlock 
-          videoSource={WebVid} 
-          label="Website Development" 
-          description="High-performance web applications built with React, Next.js, and Node.js for seamless scalability." 
-        />
+      <ServiceBlock 
+        videoSource={WebVid} 
+        label="Website Development" 
+        description="High-performance web applications built with React, Next.js, and Node.js for seamless scalability." 
+      />
 
-        <ServiceBlock 
-          videoSource={UIVid} 
-          label="UI Design" 
-          description="User-centric interfaces crafted in Figma and Adobe XD, focusing on accessibility and modern aesthetics." 
-        />
+      <ServiceBlock 
+        videoSource={UIVid} 
+        label="UI Design" 
+        description="User-centric interfaces crafted in Figma and Adobe XD, focusing on accessibility and modern aesthetics." 
+      />
 
-        <ServiceBlock 
-          videoSource={Ads} 
-          label="Advertisement Video" 
-          description="Engaging commercial content edited in Adobe Premiere Pro and After Effects to drive conversions." 
-        />
-        
-      </div>
+      <ServiceBlock 
+        videoSource={Ads} 
+        label="Advertisement Video" 
+        description="Engaging commercial content edited in Adobe Premiere Pro and After Effects to drive conversions." 
+      />
 
-      {/* Row 2: Apps and 3D */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginTop: '30px', flexWrap: 'wrap' }}>
-        
-        <ServiceBlock 
-          videoSource={AppVid} 
-          label="App Development" 
-          description="Native and cross-platform mobile solutions using Flutter and React Native for iOS and Android." 
-        />
+      <ServiceBlock 
+        videoSource={AppVid} 
+        label="App Development" 
+        description="Native and cross-platform mobile solutions using Flutter and React Native for iOS and Android." 
+      />
 
-        <ServiceBlock 
-          videoSource={threeDVid} 
-          label="3D Animation" 
-          description="Photorealistic 3D modeling and motion graphics created using Blender, Cinema 4D, and Unreal Engine." 
-        />
-
-      </div>
+      <ServiceBlock 
+        videoSource={threeDVid} 
+        label="3D Animation" 
+        description="Photorealistic 3D modeling and motion graphics created using Blender, Cinema 4D, and Unreal Engine." 
+      />
+      
     </section>
   );
 }
@@ -254,13 +362,13 @@ function Team() {
   ];
 
   return (
-    <section style={{ padding: '60px', textAlign: 'center' }}>
+    <section id="team" style={{ padding: '60px 20px', textAlign: 'center' }}>
       <h2>Meet Our Team</h2>
       <p style={{ marginBottom: '40px' }}>The minds behind the magic.</p>
       
       <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
         {members.map((member, index) => (
-          <div key={index} style={{ border: '1px solid #eee', padding: '20px', borderRadius: '15px', width: '45%', minWidth: '300px', flexGrow: 1, boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
+          <div key={index} style={{ border: '1px solid #eee', padding: '20px', borderRadius: '15px', width: '100%', maxWidth: '300px', flexGrow: 1, boxShadow: '0 2px 5px rgba(0,0,0,0.05)', boxSizing: 'border-box' }}>
             <img 
               alt="Member photo"
               src={member.photo}
@@ -280,13 +388,38 @@ function Team() {
 function App() {
   return (
     <div className="App">
+      {/* GLOBAL STYLE RESET: THIS IS THE KEY FIX */}
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        body {
+          margin: 0;
+          overflow-x: hidden;
+        }
+      `}</style>
+
+      <Navbar />
+
       <Intro /> 
       <Mission />
       <Services />
       <Team />
       
-      <footer style={{ padding: '20px', background: '#222', color: 'white', textAlign: 'center' }}>
-        <p>&copy; 2026 WhatAWebb. All rights reserved.</p>
+      <footer style={{ 
+        padding: '10px',
+        background: '#222', 
+        color: 'white', 
+        textAlign: 'center',
+        position: 'fixed',        
+        bottom: '0',
+        left: '0',
+        width: '100%',
+        zIndex: '1000'
+      }}>
+        <p style={{ margin: 0, fontSize: '12px' }}>
+          &copy; 2026 WhatAWebb. All rights reserved.
+        </p>
       </footer>
     </div>
   );
