@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/cat201-assignment-2/static/css/main.f855e6bc.css",
-    "main.js": "/cat201-assignment-2/static/js/main.9159ad9a.js",
-    "static/js/453.f748228b.chunk.js": "/cat201-assignment-2/static/js/453.f748228b.chunk.js",
-    "static/media/ads.mp4": "/cat201-assignment-2/static/media/ads.bc06efb4331587beea7d.mp4",
-    "static/media/web.mp4": "/cat201-assignment-2/static/media/web.7b4212999522d0cf2231.mp4",
-    "static/media/UIvid.mp4": "/cat201-assignment-2/static/media/UIvid.e245893dc9030cee2392.mp4",
-    "static/media/app.mp4": "/cat201-assignment-2/static/media/app.c283ca2ba08185d9e268.mp4",
-    "static/media/3d.mp4": "/cat201-assignment-2/static/media/3d.270948be02743480636d.mp4",
-    "static/media/introbg.jpg": "/cat201-assignment-2/static/media/introbg.964518f6852c9c68042d.jpg",
-    "static/media/9270553.jpg": "/cat201-assignment-2/static/media/9270553.9b1b37bf21833c19b0fb.jpg",
-    "static/media/WhatAWebb_logo.png": "/cat201-assignment-2/static/media/WhatAWebb_logo.e0880668a1924c383a72.png",
-    "static/media/UIImg.jpg": "/cat201-assignment-2/static/media/UIImg.ddddc81089dda53b88df.jpg",
-    "static/media/website.jpg": "/cat201-assignment-2/static/media/website.11c6fe38cfbf400bd91c.jpg",
-    "static/media/izham.png": "/cat201-assignment-2/static/media/izham.f4e97b767fdd6aed3415.png",
-    "static/media/farid.jpg": "/cat201-assignment-2/static/media/farid.a44c0698470e46a83757.jpg",
-    "index.html": "/cat201-assignment-2/index.html",
-    "main.f855e6bc.css.map": "/cat201-assignment-2/static/css/main.f855e6bc.css.map",
-    "main.9159ad9a.js.map": "/cat201-assignment-2/static/js/main.9159ad9a.js.map",
-    "453.f748228b.chunk.js.map": "/cat201-assignment-2/static/js/453.f748228b.chunk.js.map"
+    "main.css": "/WhatAWebb/static/css/main.f855e6bc.css",
+    "main.js": "/WhatAWebb/static/js/main.c5e74119.js",
+    "static/js/453.20f50774.chunk.js": "/WhatAWebb/static/js/453.20f50774.chunk.js",
+    "static/media/ads.mp4": "/WhatAWebb/static/media/ads.bc06efb4331587beea7d.mp4",
+    "static/media/web.mp4": "/WhatAWebb/static/media/web.7b4212999522d0cf2231.mp4",
+    "static/media/UIvid.mp4": "/WhatAWebb/static/media/UIvid.e245893dc9030cee2392.mp4",
+    "static/media/app.mp4": "/WhatAWebb/static/media/app.c283ca2ba08185d9e268.mp4",
+    "static/media/3d.mp4": "/WhatAWebb/static/media/3d.270948be02743480636d.mp4",
+    "static/media/introbg.jpg": "/WhatAWebb/static/media/introbg.964518f6852c9c68042d.jpg",
+    "static/media/9270553.jpg": "/WhatAWebb/static/media/9270553.9b1b37bf21833c19b0fb.jpg",
+    "static/media/WhatAWebb_logo.png": "/WhatAWebb/static/media/WhatAWebb_logo.e0880668a1924c383a72.png",
+    "static/media/UIImg.jpg": "/WhatAWebb/static/media/UIImg.ddddc81089dda53b88df.jpg",
+    "static/media/website.jpg": "/WhatAWebb/static/media/website.11c6fe38cfbf400bd91c.jpg",
+    "static/media/izham.png": "/WhatAWebb/static/media/izham.f4e97b767fdd6aed3415.png",
+    "static/media/farid.jpg": "/WhatAWebb/static/media/farid.a44c0698470e46a83757.jpg",
+    "index.html": "/WhatAWebb/index.html",
+    "main.f855e6bc.css.map": "/WhatAWebb/static/css/main.f855e6bc.css.map",
+    "main.c5e74119.js.map": "/WhatAWebb/static/js/main.c5e74119.js.map",
+    "453.20f50774.chunk.js.map": "/WhatAWebb/static/js/453.20f50774.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.9159ad9a.js"
+    "static/js/main.c5e74119.js"
   ]
 }
